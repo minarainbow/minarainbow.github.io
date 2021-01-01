@@ -6,7 +6,7 @@ description: <h5 class="post-description"> Undergrad Intern @ <a href="https://w
 
 profile:
   align: right
-  image: prof_pic.png
+  image: prof_pic.jpg
   # address: >
   #   <p>555 your office number</p>
   #   <p>123 your address street</p>
