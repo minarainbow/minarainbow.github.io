@@ -10,6 +10,7 @@ I won the grand prize at the 2020 KAIST Winter/Spring URP (Undergraduate Researc
 ***
 
 Title: Data Modeling Techniques for Supporting Conversational Interaction in Video Tutorials
+
 제목: 튜토리얼 비디오 기반 대화형 인터랙션을 위한 데이터 모델 기법
 
 Abstract:
