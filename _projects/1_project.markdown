@@ -1,8 +1,8 @@
 ---
 layout: page
-title: project 1
-description: a project with a background image
-img: /assets/img/12.jpg
+title: KatchUp
+description: Supporting late or distracted students in real-time online lectures by helping them to easily catch up with the context.
+img: /assets/img/KatchUp_logo.png
 importance: 1
 ---
 
