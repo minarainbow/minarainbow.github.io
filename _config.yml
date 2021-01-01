@@ -82,7 +82,7 @@ collections:
     defaults:
       layout: post
     output: true
-    permalink: /news/:path/
+    permalink: /:year/:month/:title
   projects:
     output: true
     permalink: /projects/:path/
