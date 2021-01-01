@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Won a the grand prize at the 2020 URP
+title: 🏆 Won the grand prize at the 2020 URP
 date: 2020-08-27 16:11:00-0400
 inline: false
 ---

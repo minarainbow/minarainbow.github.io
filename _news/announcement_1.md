@@ -1,7 +1,7 @@
 ---
 layout: post
-date: 2020-08-27 16:11:00-0400
+date: 2020-12-18 16:11:00-0400
 inline: true
 ---
 
-Virtually attending CSCW Asia Winter School on Dec 18-19
+👩‍💻 Virtually attending [CSCW Asia Winter School](https://cscwaws2020.github.io) on Dec 18-19
