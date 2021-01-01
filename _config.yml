@@ -50,7 +50,7 @@ medium_username: # your Medium username
 quora_username: # your Quora username
 publons_id: # your ID on Publons
 research_gate_profile: # your profile on ResearchGate
-blogger_url: # your blogger URL
+blogger_url: https://mina1004h.blogspot.com # your blogger URL
 keybase_username: # your keybase user name
 
 contact_note: >
@@ -82,12 +82,12 @@ collections:
     defaults:
       layout: post
     output: true
-    permalink: /:year/:month/:title
+    permalink: /news/:path/
   projects:
     output: true
     permalink: /projects/:path/
 
-news_limit: 5
+news_limit: 10
 
 # -----------------------------------------------------------------------------
 # Jekyll settings
