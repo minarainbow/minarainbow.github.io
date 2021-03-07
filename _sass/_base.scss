@@ -63,6 +63,7 @@ a, table.table a {
   }
 }
 
+
 .post-description {
   margin-bottom: 2rem;
   font-size: 0.875rem;
@@ -170,12 +171,13 @@ a, table.table a {
 .social {
   text-align: center;
   .contact-icon {
-    font-size: 4rem;
+    font-size: 3rem;
     a {
       color: var(--global-icon-color);
       &:hover {
         color: var(--global-theme-color);
       }
+      margin: 0.5rem;
     }
   }
   .contact-note {
@@ -222,6 +224,7 @@ footer.sticky-bottom {
     font-size: 5rem;
   }
 }
+
 
 .post-list {
   margin: 0;
@@ -280,6 +283,7 @@ footer.sticky-bottom {
 .projects {
   .grid-item {
     width: 250px;
+    margin: 10px;
     margin-bottom: 10px;
     a {
       color: black;
@@ -291,6 +295,13 @@ footer.sticky-bottom {
   }
   .card img {
     width: 100%;
+    align-items: c;
+  }
+  .card-hashtag {
+    width: 100;
+    margin-bottom: 0;
+    margin-right: 8px;
+    font-size: small;
   }
 }
 

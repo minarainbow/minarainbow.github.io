@@ -1,9 +1,11 @@
 ---
 layout: page
-title: project 2
-description: a project with a background image
-img: /assets/img/3.jpg
-importance: 2
+title: RubySlippers
+description: A multi-modal interface that supports efficient content-based voice navigation of video tutorials through keyword-based queries.
+img: /assets/img/RubySlippers.png
+importance: 1
+redirect: https://rubyslippers.kixlab.org
+hashtags:  ['research','VUI', 'learning']
 ---
 
 Every project has a beautiful feature showcase page.

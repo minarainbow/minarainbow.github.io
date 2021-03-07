@@ -1,11 +1,12 @@
 ---
 layout: page
 title: KatchUp
-description: Supporting late or distracted students in real-time online lectures by helping them to easily catch up with the context.
+description: Supporting late or distracted students in real-time online lectures by helping them to collaborratively catch up with the context.
 img: /assets/img/KatchUp_logo.png
-importance: 1
-github: https://github.com/jeongeonp/MinChoAvengers
+importance: 3
+github: https://github.com/jeongeonp/MinChoAvengers/blob/master/documents/DP6/DP6-FinalReport.md
 url: https://minchoom-cs473.web.app/
+hashtags: ['schoolwork', 'collaboration','learning']
 
 ---
 <div class="row ml-1 mr-1 p-0">
@@ -19,8 +20,6 @@ url: https://minchoom-cs473.web.app/
     </div>
 </div>
 
-
-In real-time online lectures, students who are late or lose track have difficulties understanding the content as lectures often incorporate materials exclusive to the live lecture. To help catch up on missed information unavailable in lecture materials, KatchUp supports crowd-generated timeline and context-based QnA between peers. Users can immediately identify the missed content by looking at crowd-generated flags and quickly ask questions with the help of KatchUp-generated screenshots and questions.
 
 
 <div class="row">

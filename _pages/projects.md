@@ -22,21 +22,21 @@ nav: true
         {% endif %}
         <div class="card-body">
           <h2 class="card-title ">{{ project.title }}</h2>
-          <p class="card-text">{{ project.description }}</p>
           <div class="row ml-1 mr-1 p-0">
             {% if project.github %}
             <div class="github-icon">
               <div class="icon" data-toggle="tooltip" title="Code Repository">
-                <a href="{{ project.github }}" target="_blank"><i class="fab fa-github gh-icon"></i></a>
+                <object><a href="https://minchoom-cs473.web.app/" target="_blank"><i class="fas fa-link"></i></a></object>
+                <object><a href="{{ project.github }}" target="_blank"><i class="fab fa-github gh-icon"></i></a></object>
               </div>
-              {% if project.github_stars %}
-              <span class="stars" data-toggle="tooltip" title="GitHub Stars">
-                <i class="fas fa-star"></i>
-                <span id="{{ project.github_stars }}-stars"></span>
-              </span>
-              {% endif %}
             </div>
             {% endif %}
+          </div>
+          <p class="card-text">{{ project.description }}</p>
+          <div class="row ml-1 mr-1 p-0 mb-0  ">
+          {% for hashtag in project.hashtags %}
+            <p class="card-hashtag"> #{{hashtag}} </p>
+          {% endfor %}
           </div>
         </div>
       </div>
