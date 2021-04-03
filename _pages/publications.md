@@ -8,16 +8,20 @@ nav: true
 ---
 
 <div class="publications">
-
+<h3> Conference Papers (Selected) </h3>
 {% for y in page.years %}
   <h2 class="year">{{y}}</h2>
-  <h5><b> RubySlippers: Supporting Content-based Voice Navigation for How-to Videos </b></h5>
-
+  {% bibliography -f papers -q @*[year={{y}}]* %}
 {% endfor %}
 
 </div>
 
-*To appear at CHI '21*
-<h6>
-We present RubySlippers, a prototype that supports efficient content-based voice navigation through keyword-based queries. Our computational pipeline automatically detects referenceable elements in the video, and finds the video segmentation that minimizes the number of needed navigational commands. Our evaluation (N=12) shows that participants could perform three representative navigation tasks with fewer commands and less frustration using RubySlippers than the conventional voice-enabled video interface.
-</h6>
+<div class="publications">
+<h3> Others </h3>
+
+{% for y in page.years %}
+  <h2 class="year">{{y}}</h2>
+  {% bibliography -f others -q @*[year={{y}}]* %}
+{% endfor %}
+
+</div>

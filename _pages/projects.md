@@ -23,14 +23,22 @@ nav: true
         <div class="card-body">
           <h2 class="card-title ">{{ project.title }}</h2>
           <div class="row ml-1 mr-1 p-0">
-            {% if project.github %}
             <div class="github-icon">
               <div class="icon" data-toggle="tooltip" title="Code Repository">
-                <object><a href="https://minchoom-cs473.web.app/" target="_blank"><i class="fas fa-link"></i></a></object>
+                {% if project.paper %}
+                <object><a href="{{ project.paper }}" target="_blank"><i class="fas fa-scroll"></i></a></object>
+                {% endif %}
+                {% if project.slides %}
+                <object><a href="{{ project.slides }}" target="_blank"><i class="fas fa-chalkboard"></i></a></object>
+                {% endif %}
+                {% if project.prototype %}
+                <object><a href="{{ project.prototype }}" target="_blank"><i class="fas fa-link"></i></a></object>
+                {% endif %}
+                {% if project.github %}
                 <object><a href="{{ project.github }}" target="_blank"><i class="fab fa-github gh-icon"></i></a></object>
+                {% endif %}
               </div>
             </div>
-            {% endif %}
           </div>
           <p class="card-text">{{ project.description }}</p>
           <div class="row ml-1 mr-1 p-0 mb-0  ">

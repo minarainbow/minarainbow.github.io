@@ -1,11 +1,11 @@
 ---
 layout: page
 title: KatchUp
-description: Supporting late or distracted students in real-time online lectures by helping them to collaborratively catch up with the context.
+description: Supporting late or distracted students in real-time online lectures by helping them to collaboratively catch up with the context.
 img: /assets/img/KatchUp_logo.png
 importance: 3
 github: https://github.com/jeongeonp/MinChoAvengers/blob/master/documents/DP6/DP6-FinalReport.md
-url: https://minchoom-cs473.web.app/
+prototype: https://minchoom-cs473.web.app/
 hashtags: ['schoolwork', 'collaboration','learning']
 
 ---
@@ -16,7 +16,7 @@ hashtags: ['schoolwork', 'collaboration','learning']
     </div>
     <div class="col-md-2">
         <div class="icon" data-toggle="tooltip" title="Code Repository"></div>
-        <a href="https://github.com/jeongeonp/MinChoAvengers" target="_blank"><i class="fab fa-github gh-icon"></i> Code</a>
+        <a href="https://github.com/jeongeonp/MinChoAvengers/blob/master/documents/DP6/DP6-FinalReport.md" target="_blank"><i class="fab fa-github gh-icon"></i> Report</a>
     </div>
 </div>
 
