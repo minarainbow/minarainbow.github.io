@@ -24,11 +24,11 @@ hashtags: ['schoolwork', 'collaboration','learning']
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/KatchUp_overview.jpg' | relative_url }}" alt="" title="example image"/>
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/KatchUp_overview.jpg' | relative_url }}" alt="The system has 1. main lecture player 2. timeline with collaboratively created flags 3. catchup chat for anchored QnA" title="Overview of the system KatchUp"/>
     </div>
 </div>
 <div class="caption">
-    The overall interface with components in blue border. 
+    The system has 1. main lecture player 2. timeline with collaboratively created flags 3. catchup chat for anchored QnA
 </div>
 
 

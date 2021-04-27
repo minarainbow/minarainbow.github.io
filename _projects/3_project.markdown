@@ -12,7 +12,7 @@ hashtags: ['schoolwork', 'NLP']
 <div class="row ml-1 mr-1 p-0">
     <div class="col-md-0">
         <div  data-toggle="tooltip" title="Prototype Link"></div>
-        <a href="https://minchoom-cs473.web.app/" target="_blank"><i class="fas fa-chalkboard"></i> Slides</a>
+        <a href="https://github.com/jeongeonp/SinK-DaT/blob/master/documents/final_presentation.pdf" target="_blank"><i class="fas fa-chalkboard"></i> Slides</a>
     </div>
     <div class="col-md-2">
         <div class="icon" data-toggle="tooltip" title="Code Repository"></div>
@@ -21,9 +21,9 @@ hashtags: ['schoolwork', 'NLP']
 </div>
 
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/SinkDat_overview.png' | relative_url }}" alt="" title="example image"/>
+<div class="row justify-content-md-center">
+    <div class="col-sm-9 justify-content-md-center">
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/SinkDat_overview.png' | relative_url }}" alt="" title="Flow of how SinkDaT detects and translate Sin-Ko words"/>
     </div>
 </div>
 <div class="caption">
