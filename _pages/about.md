@@ -19,6 +19,6 @@ social: true  # includes social icons at the bottom of the page
 
 I graduated with Bachelor’s degree from [KAIST](http://kaist.ac.kr/en/) with a major in [Computer Science](https://cs.kaist.ac.kr/). Currently, I am working with [Juho Kim](https://juhokim.com/) as part of [KIXLAB](https://www.kixlab.org/).
 
-My research in Human-Computer Interaction focuses on **Accessibility, Learning Support, and Human-AI collaboration**. I aim to build interactive systems to support full participation of people with diverse abilities. Currently, I am developing assistive technologies to make visual world more accessible.  
+My research in Human-Computer Interaction focuses on **Accessibility, Healthcare, Learning Support, and Human-AI collaboration**. I aim to build interactive systems to support full participation of people with diverse abilities. Currently, I am developing assistive technologies to make visual world more accessible.  
 
 *I am a Ph.D. applicant for Fall 2022!*
