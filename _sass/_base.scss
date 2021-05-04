@@ -324,8 +324,8 @@ footer.sticky-bottom {
     }
   }
   h2.year {
-    color: $grey-color-light;
-    border-top: 1px solid $grey-color-light;
+    color: $grey-color;
+    border-top: 1px solid $grey-color;
     padding-top: 1rem;
     margin-top: 2rem;
     margin-bottom: -2rem;
@@ -439,3 +439,23 @@ html.transition *:after {
   transition: all 750ms !important;
   transition-delay: 0 !important;
 }
+
+.moments{
+  h2.moment {
+    font-family: monospace;
+    font-size: 1.2rem;
+    border-bottom-style: 1px solid $grey-color;
+    margin: 2rem;
+    margin-bottom: 10rem;
+    text-align: center;
+  }
+  h2.year {
+    color: $grey-color;
+    border-top: 1px solid $grey-color;
+    padding-top: 1rem;
+    margin-top: 2rem;
+    margin-bottom: -2rem;
+    text-align: right;
+  }
+}
+

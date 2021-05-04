@@ -3,7 +3,7 @@ layout: about
 title: about
 permalink: /
 description: <h5 class="post-description"> Undergrad Intern @ <a href="https://www.kixlab.org/">KIXLAB</a>, KAIST </h5>
-
+order: 1
 profile:
   align: right
   image: prof_pic.png

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: KatchUp
-description: Supporting late or distracted students in real-time online lectures by helping them to collaboratively catch up with the context.
+description: Supporting late or distracted students in real-time online lectures by helping them to collaboratively catch up with the context
 img: /assets/img/KatchUp_logo.png
 importance: 3
 github: https://github.com/jeongeonp/MinChoAvengers/blob/master/documents/DP6/DP6-FinalReport.md

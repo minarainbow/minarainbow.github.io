@@ -4,6 +4,7 @@ title: Hanmaum
 description: Korean learning mobile app to increase meta-cognition in pronunciation learning
 img: /assets/img/Hanmaum_logo.png
 importance: 4
+prototype: http://www.hanmaum-ec.org
 hashtags: ['research', 'volunteering', 'learning']
 ---
 
@@ -20,6 +21,8 @@ hashtags: ['research', 'volunteering', 'learning']
 <div class="caption">
     The example pronunciation quiz session from the app. 
 </div>
+
+* This project is in collaboration with [Hanmaum voluntary organization](http://www.hanmaum-ec.org)
 
 Bad habits in pronunciation tend to solidify easily, so raising meta-cognition and having repetitive exposure is needed. However in low-resource setting, solutions such as tutoring or automated system are not reliable due to low performance of Korean language models. To increase meta-cognition in pronunciation learning in a scalable way, our system assists users in peer evaluation for co-learning experiences.
 

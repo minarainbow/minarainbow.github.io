@@ -31,6 +31,22 @@
               {% endif %}
             </a>
           </li>
+          
+          <!-- Other pages -->
+          {% assign sorted_pages = site.pages | sort: "order" %}
+          {% for p in sorted_pages %}
+          {% if p.nav and p.autogen == nil %}
+          <li class="nav-item {% if page.title == p.title %}active{% endif %}">
+              <a class="nav-link" href="{{ p.url | relative_url }}">
+                {{ p.title }}
+                {% if page.title == p.title %}
+                <span class="sr-only">(current)</span>
+                {% endif %}
+              </a>
+          </li>
+          {% endif %}
+          {% endfor %}
+
           {% if site.blog_name %}
           <!-- Blog -->
           <li class="nav-item {% if page.url contains 'blog' %}active{% endif %}">
@@ -50,20 +66,6 @@
             </a>
           </li> -->
           {% endif %}
-          <!-- Other pages -->
-          {% assign sorted_pages = site.pages | sort: "title" %}
-          {% for p in sorted_pages %}
-          {% if p.nav and p.autogen == nil %}
-          <li class="nav-item {% if page.title == p.title %}active{% endif %}">
-              <a class="nav-link" href="{{ p.url | relative_url }}">
-                {{ p.title }}
-                {% if page.title == p.title %}
-                <span class="sr-only">(current)</span>
-                {% endif %}
-              </a>
-          </li>
-          {% endif %}
-          {% endfor %}
         <!-- CV -->
         <li class="nav-item {% if page.title == 'CV' %}active{% endif %}">
           <a class="nav-link" target="_blank" href="{{ '/assets/pdf/resume_MinaHuh.pdf' | prepend: site.baseurl | prepend: site.url }}">CV</a>

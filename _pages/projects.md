@@ -3,6 +3,7 @@ layout: page
 title: projects
 permalink: /projects/
 description: A growing collection of my projects.
+order: 3
 nav: true
 ---
 
