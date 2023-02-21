@@ -18,8 +18,7 @@ hashtags: ['research','video','accessibility']
 </div>
 
 <div  style="display: flex; justify-content: space-between; font-weight: 500; margin-bottom: 20px"> 
-    <span>Work in Progress for UIST 2022</span>
-    <span>Advised by Prof. Xiang Anthony Chen and Prof. Juho Kim</span>
+    <span>Work in Progress</span>
 </div>
 
 <div class="row justify-content-md-center">
