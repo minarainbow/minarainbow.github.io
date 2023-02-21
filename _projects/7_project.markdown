@@ -4,7 +4,7 @@ title: Accessible Makeup
 description: A content analysis of 145 YouTube videos to demonstrate visually impaired individuals' unique practices before, during, and after doing makeup. 
 img: /assets/img/application.png
 paper: assets/pdf/CHI2022_BlindCosmetics.pdf
-importance: 0
+importance: 1
 hashtags: ['research','makeup','cosmetics','accessibility']
 
 ---

@@ -2,7 +2,7 @@
 layout: page
 title: Peek-A-Boo
 description: Supporting timeline navigation and visual engagement to enhance the information seeking experience of videos for blind and low visioned people
-importance: 1
+importance: 2
 img: /assets/img/peek-a-boo.jpeg
 slides: /assets/pdf/CAWS_presentation.pdf
 hashtags: ['research','video','accessibility']

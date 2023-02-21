@@ -3,7 +3,7 @@ layout: page
 title: RubySlippers
 description: A multi-modal interface that supports efficient content-based voice navigation of video tutorials through keyword-based queries.
 img: /assets/img/RubySlippers.png
-importance: 0
+importance: 1
 slides: https://www.youtube.com/watch?v=WxCB0GGVCDA
 paper: https://kixlab.github.io/website-files/2021/chi2021-RubySlippers-paper.pdf
 hashtags:  ['research','video', 'VUI', 'tutorial']
