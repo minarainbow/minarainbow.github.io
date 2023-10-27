@@ -18,7 +18,9 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-Hi! I am a 1st-year Ph.D. at [UT Austin Computer Science](https://www.cs.utexas.edu/), advised by Prof. [Amy Pavel](https://amypavel.com/). My research focuses on creating intelligent, accessible, and scalable systems to improve the effectiveness of audio/visual media.
+Hi! I am a Ph.D. student at [UT Austin Computer Science](https://www.cs.utexas.edu/), advised by 
+\
+Prof. [Amy Pavel](https://amypavel.com/). My research focuses on building AI-powered creativity support tools for efficient and accessible media authoring.
 
 I completed my B.Sc in [Computer Science](https://cs.kaist.ac.kr/) at [KAIST](http://kaist.ac.kr/en/) where I was advised by Prof. [Juho Kim](https://juhokim.com/) as part of [KIXLAB](https://www.kixlab.org/). I have also worked as a research intern at [Naver AI Lab](https://naver-career.gitbook.io/en/teams/clova-cic/ai-lab).
 
