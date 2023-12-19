@@ -135,6 +135,13 @@
 
           <!-- Links/Buttons -->
           <div class="links">
+          {%- if entry.award %}
+            {% if entry.award contains 'Best' -%}
+            <div>🏆 <b>Best Paper Award</b></div>
+            {%- else -%}
+            <div>🏅 <b>Honorable Mention</b></div>
+            {%- endif %}
+          {%- endif %}
           {%- if entry.abstract %}
             <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
           {%- endif %}
