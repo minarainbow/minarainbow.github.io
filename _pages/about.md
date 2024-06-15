@@ -22,6 +22,6 @@ Hi! I am a Ph.D. student at [UT Austin Computer Science](https://www.cs.utexas.e
 \
 Prof. [Amy Pavel](https://amypavel.com/). My research focuses on building AI-powered creativity support tools for efficient and accessible media authoring.
 
-I completed my B.Sc in [Computer Science](https://cs.kaist.ac.kr/) at [KAIST](http://kaist.ac.kr/en/) where I was advised by Prof. [Juho Kim](https://juhokim.com/) as part of [KIXLAB](https://www.kixlab.org/). I have also worked as a research intern at [Naver AI Lab](https://naver-career.gitbook.io/en/teams/clova-cic/ai-lab).
+I completed my B.Sc in [Computer Science](https://cs.kaist.ac.kr/) at [KAIST](http://kaist.ac.kr/en/) where I was advised by Prof. [Juho Kim](https://juhokim.com/) as part of [KIXLAB](https://www.kixlab.org/). I have also worked as a research intern at [Adobe Research](https://research.adobe.com/research/) and [Naver AI Lab](https://naver-career.gitbook.io/en/teams/clova-cic/ai-lab).
 
 
