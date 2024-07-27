@@ -12,6 +12,7 @@
               {% endif %}
               {% for item in news limit: news_limit %} 
                 <tr>
+                  <!-- make this width wider -->
                   <th scope="row">{{ item.date | date: "%b %-d, %Y" }}</th>
                   <td>
                     {% if item.inline -%} 
