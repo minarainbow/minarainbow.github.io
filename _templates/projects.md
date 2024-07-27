@@ -4,13 +4,8 @@ title: projects
 permalink: /projects/
 description: A growing collection of my projects.
 nav: true
-<<<<<<< HEAD:_templates/projects.md
 nav_order: 2
 # display_categories: [work, fun]
-=======
-nav_order: 3
-display_categories: [work, fun]
->>>>>>> upstream/master:_pages/projects.md
 horizontal: false
 ---
 
