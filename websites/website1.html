@@ -4,68 +4,77 @@
 <head>
     <title>Classic Blog Post</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: blue;
-            color: yellow;
-        }
+       body {
+    margin: 0;
+    padding: 0;
+    background-color: #fbf8ff; /* surface color for backgrounds */
+    color: #1b1b21; /* on_surface color for text */
+}
 
-        header {
-            background-color: rgb(148, 130, 130);
-            color: white;
-            padding: 1rem;
-            text-align: center;
-        }
+header {
+    background-color: #555992; /* primary color for high-emphasis components */
+    color: #ffffff; /* on_primary color for text against primary */
+    padding: 1rem;
+    text-align: center;
+}
 
-        article {
-            padding: 2rem;
-            text-align: center;
-        }
+article {
+    padding: 2rem;
+    text-align: center;
+}
 
-        .title {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            font-family: Arial;
-        }
+.title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-family: Arial;
+    color: #1b1b21; /* on_surface color to ensure good contrast and readability */
+}
 
-        .metadata {
-            color: rgb(124, 121, 121);
-            margin-bottom: 2rem;
-        }
+.metadata {
+    color: #777680; /* outline color for less prominent but important boundaries */
+    margin-bottom: 2rem;
+}
 
-        img {
-            width: 40%;
-        }
+img {
+    width: 40%;
+}
 
-        footer {
-            background-color: #333;
-            color: blue;
-            padding: 1rem;
-            text-align: center;
-        }
+footer {
+    background-color: #5c5d72; /* secondary color for less prominent components */
+    color: #ffffff; /* on_secondary color for text against secondary */
+    padding: 1rem;
+    text-align: center;
+}
 
-        ul {
-            text-align: center;
-        }
+.search-field {
+    box-sizing: border-box;
+    position: relative;
+    font-size: 13px;
+    background-color: #ffd8ee; /* tertiary_container color for input fields */
+    color: #2e1126; /* on_tertiary_container color for text against tertiary container */
+    border: 1px solid #777680; /* outline color for the search field outline */
+}
 
-        p {
-            font-size: 13px;
-        }
+.button-div button {
+    background-color: #e0e0ff; /* primary_container color for standout components like buttons */
+    color: #11144b; /* on_primary_container color for text against primary container */
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+}
 
-        .search-field {
-            box-sizing: border-box;
-            position: relative;
-            font-size: 13px;
-        }
+p {
+    font-size: 13px;
+    color: #1b1b21; /* on_surface color for general text for better readability */
+}
 
-        .button-div {
-            text-align: right;
-        }
+.quote {
+    font-style: italic;
+    color: #78536b; /* tertiary color for contrasting accents */
+}
 
-        .quote {
-            font-style: italic;
-        }
+
     </style>
 </head>
 
