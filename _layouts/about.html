@@ -48,8 +48,12 @@ layout: default
 
           <!-- Selected papers -->
           {% if page.selected_papers -%}
+           
+          <div class="publications">
             <h2><a href="{{ '/publications/' | relative_url }}" style="color: inherit;">selected publications</a></h2>
-            {%- include selected_papers.html %}
+            {% bibliography -f papers -q @*[selected=true]* %}
+          </div>
+
           {%- endif %}
 
           <!-- Social -->
