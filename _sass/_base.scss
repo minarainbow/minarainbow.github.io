@@ -318,6 +318,7 @@ footer.sticky-bottom {
       .badge {
         color: var(--global-card-bg-color) !important;
         background-color: var(--global-theme-color) !important;
+
       }
     }
   }
@@ -511,6 +512,8 @@ footer.sticky-bottom {
           background-color: var(--global-theme-color);
           padding-left: 1rem;
           padding-right: 1rem;
+          font-size: 1rem;
+          font-weight: normal;
           a {
             color: white;
             &:hover {
