@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mina Huh</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <link rel="apple-touch-icon" href="assets/img/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @font-face {
+            font-family: 'Asap';
+            src: url('assets/fonts/Asap-Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+        }
+        body {
+            font-family: 'Asap', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            color: #333;
+        }
+        .header {
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+            margin-bottom: 10px;
+        }
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 8px;
+            object-fit: cover;
+            flex-shrink: 0;
+            align-self: flex-start;
+            margin-top: 48px;
+        }
+        .header-content {
+            flex: 1;
+            min-width: 0;
+        }
+        .header-content p:last-child {
+            margin-bottom: 0;
+        }
+        h1 {
+            font-size: 2em;
+            font-weight: 600;
+            margin-bottom: 20px;
+            margin-top: 0;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        p strong {
+            font-style: italic;
+        }
+        .research-bullets {
+            list-style: none;
+            padding-left: 0;
+            margin: 5px 0;
+        }
+        .research-bullets li {
+            margin-bottom: 8px;
+            padding-left: 18px;
+            position: relative;
+        }
+        .research-bullets li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            font-size: 1.2em;
+        }
+        .paper-ref {
+            font-size: 0.75em;
+            color: #3c60d8;
+            text-decoration: none;
+            margin-left: 3px;
+            vertical-align: super;
+            font-weight: normal;
+        }
+        .paper-ref:hover {
+            text-decoration: underline;
+        }
+        a {
+            color: #3c60d8;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .social-links {
+            margin: 20px 0;
+        }
+        .social-links a {
+            margin-right: 15px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .social-links a i {
+            font-size: 0.9em;
+        }
+        h2 {
+            font-size: 1.5em;
+            font-weight: 400;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        h2:not(:first-of-type) {
+            margin-top: 50px;
+        }
+        .publication {
+            margin-bottom: 30px;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+        .publication-image {
+            width: 200px;
+            height: auto;
+            object-fit: contain;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+        .publication-content {
+            flex: 1;
+        }
+        .publication-title {
+            font-weight: 700;
+            font-size: 0.95em;
+            margin-bottom: 8px;
+            color: #000;
+        }
+        .publication-authors {
+            margin-bottom: 5px;
+            color: #888;
+            font-size: 0.95em;
+        }
+        .publication-award {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.9em;
+            font-weight: 700;
+            color: #000;
+            vertical-align: baseline;
+            background-color: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+        .publication-award i {
+            font-size: 0.85em;
+        }
+        .publication-authors strong {
+            color: #000;
+            font-weight: 700;
+        }
+        .publication-venue {
+            color: #666;
+        }
+        .publication-venue-row {
+            display: flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 5px;
+            line-height: 1.4;
+        }
+        .publication-links {
+            margin-top: 5px;
+            font-size: 0.9em;
+        }
+        .publication-links a {
+            margin-right: 10px;
+        }
+        .equal-contribution {
+            font-size: 0.9em;
+            color: #666;
+            font-style: normal;
+            vertical-align: baseline;
+        }
+        .research-header {
+            display: flex;
+            align-items: baseline;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .filter-toggle {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            font-size: 0.9em;
+        }
+        .filter-toggle a {
+            color: #888;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .filter-toggle a.active {
+            color: #000;
+            font-weight: 400;
+        }
+        .filter-toggle a:not(.active) {
+            color: #888;
+        }
+        .filter-toggle a.active {
+            color: #000;
+        }
+        .filter-toggle span {
+            color: #666;
+        }
+        .publication.hidden {
+            display: none;
+        }
+        @media (max-width: 600px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .profile-image {
+                width: 120px;
+                height: 120px;
+                border-radius: 8px;
+            }
+            .publication {
+                flex-direction: column;
+            }
+            .publication-image {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <h1>Mina Huh</h1>
+            <p>I'm a 4th year Ph.D. student at <a href="https://eecs.berkeley.edu/">UC Berkeley EECS</a>, advised by <a href="https://amypavel.com/">Amy Pavel</a>. My work has been recognized and supported by <a href="https://www.cs.utexas.edu/news/2024/computer-science-doctoral-student-earns-google-fellowship">Google Ph.D. Fellowship</a>.</p>
+            <p>My research focuses on accessible Human-AI collaboration. I build systems that help people inspect AI outputs, act with AI guidance, and intervene during AI execution - especially when visual access or attention is limited.</p>
+        </div>
+        <img src="assets/img/prof_pic4.jpg" alt="Mina Huh wearing a black jacket and smiling outdoors, with Rattlesnake Mountain near Seattle in the background." class="profile-image">
+    </div>
+    
+    <!-- <p style="margin-top: 0; margin-bottom: 5px;"> I've worked on:</p>
+    <ul class="research-bullets">
+        <li>co-create with AI generators<a href="#genassist" class="paper-ref">1</a><a href="#videodiff" class="paper-ref">2</a><a href="#vidtune" class="paper-ref">3</a></li>
+        <li>learn with AI coaches<a href="#vid2coach" class="paper-ref">4</a><a href="#rubyslippers" class="paper-ref">5</a></li>
+        <li>monitor AI agents<a href="#designchecker" class="paper-ref">6</a><a href="#lfvqa" class="paper-ref">7</a></li>
+    </ul>
+     -->
+    <p>I spent first three years of my Ph.D. at <a href="https://www.cs.utexas.edu/">UT Austin</a>. I completed my B.Sc in <a href="https://cs.kaist.ac.kr/">Computer Science</a> at <a href="http://kaist.ac.kr/en/">KAIST</a> advised by <a href="https://juhokim.com/">Juho Kim</a>. I also worked as a research intern at <a href="https://research.adobe.com/research/">Adobe Research</a> (x2) and <a href="https://naver-career.gitbook.io/en/teams/clova-cic/ai-lab">Naver AI Lab</a>.</p>
+    
+    <div class="social-links">
+        <a href="mailto:minahuh@berkeley.edu"><i class="fas fa-envelope"></i> Email</a>
+        <a href="https://scholar.google.com/citations?user=Rt3lwtYAAAAJ"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+        <a href="https://www.linkedin.com/in/mina-huh-422946194"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="https://twitter.com/mina1004h"><i class="fab fa-twitter"></i> Twitter</a>
+        <a href="assets/pdf/Huh_Mina_CV.pdf"><i class="fas fa-file-alt"></i> CV</a>
+    </div>
+    
+    <div class="research-header">
+        <h2>Research</h2>
+        <div class="filter-toggle">
+            <a href="#" id="filter-all" class="active">All</a>
+            <span>/</span>
+            <a href="#" id="filter-selected">Selected</a>
+        </div>
+    </div>
+    
+    <div class="publication" data-selected="true" id="vidtune">
+        <img src="assets/img/vidtune_teaser.png" alt="VidTune: Creating Video Soundtracks with Generative Music and Contextual Thumbnails" class="publication-image">
+        <div class="publication-content">
+            <div class="publication-title">VidTune: Creating Video Soundtracks with Generative Music and Contextual Thumbnails</div>
+            <div class="publication-authors"><strong>Mina Huh</strong>, C. Ailie Fraser, Dingzeyu Li, Mira Dontcheva, Bryan Wang</div>
+            <div class="publication-venue-row"><span class="publication-venue">CHI 2026</span></div>
+            <div class="publication-links">
+                <a href="https://minahuh.com/VidTune">Webpage</a> • <a href="https://www.arxiv.org/abs/2601.12180">PDF</a> • <a href="https://www.youtube.com/watch?v=3N10kaNWOBU">Talk</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="publication" data-selected="false">
+        <img src="assets/img/dance_teaser.png" alt="Co-Designing Multimodal Systems for Accessible Asynchronous Dance Instruction" class="publication-image">
+        <div class="publication-content">
+            <div class="publication-title">Co-Designing Multimodal Systems for Accessible Asynchronous Dance Instruction</div>
+            <div class="publication-authors">Ujjaini Das, Shreya Kappala, Meng Chen, <strong>Mina Huh</strong>, Amy Pavel</div>
+            <div class="publication-venue-row"><span class="publication-venue">CHI 2026</span></div>
+            <div class="publication-links">
+                <a href="https://arxiv.org/abs/2511.09658">PDF</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="publication" data-selected="true" id="vid2coach">
+        <img src="assets/img/vid2coach_teaser.webp" alt="Vid2Coach: Transforming How-To Videos into Task Assistants" class="publication-image">
+        <div class="publication-content">
+            <div class="publication-title">Vid2Coach: Transforming How-To Videos into Task Assistants</div>
+            <div class="publication-authors"><strong>Mina Huh</strong>, Zihui Xue, Ujjaini Das, Kumar Ashutosh, Kristen Grauman, Amy Pavel</div>
+            <div class="publication-venue-row"><span class="publication-venue">UIST 2025</span></div>
+            <div class="publication-links">
+                <a href="https://minahuh.com/Vid2Coach/">Webpage</a> • <a href="https://arxiv.org/abs/2506.00717">PDF</a> • <a href="https://www.youtube.com/watch?v=KP_e29I09KA">Talk</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="publication" data-selected="false" id="videodiff">
+        <img src="assets/img/videodiff_teaser.webp" alt="VideoDiff: Human-AI Video Co-Creation with Alternatives" class="publication-image">
+        <div class="publication-content">
+            <div class="publication-title">VideoDiff: Human-AI Video Co-Creation with Alternatives</div>
+            <div class="publication-authors"><strong>Mina Huh</strong>, Dingzeyu Li, Kim Pimmel, Valentina Shin, Amy Pavel, Mira Dontcheva</div>
+            <div class="publication-venue-row"><span class="publication-venue">CHI 2025</span></div>
+            <div class="publication-links">
+                <a href="VideoDiff_CamReady.pdf">PDF</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="publication" data-selected="false">
+        <img src="assets/img/lotus_teaser.webp" alt="Lotus: Creating Short Videos from Long Videos with Abstractive and Extractive Summarization" class="publication-image">
+        <div class="publication-content">
+            <div class="publication-title">Lotus: Creating Short Videos from Long Videos with Abstractive and Extractive Summarization</div>
+            <div class="publication-authors">Aadit Barua, Karim Benharrak, Meng Chen, <strong>Mina Huh</strong>, Amy Pavel</div>
+            <div class="publication-venue-row"><span class="publication-venue">IUI 2025</span></div>
+            <div class="publication-links">
+                <a href="https://arxiv.org/abs/2502.07096">PDF</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="publication" data-selected="false" id="designchecker">
+        <img src="assets/img/designchecker_teaser.webp" alt="DesignChecker: Visual Design Support for BLV Web Developers" class="publication-image">
+        <div class="publication-content">
+            <div class="publication-title">DesignChecker: Visual Design Support for BLV Web Developers</div>
+            <div class="publication-authors"><strong>Mina Huh</strong>, Amy Pavel</div>
+            <div class="publication-venue-row"><span class="publication-venue">UIST 2024</span></div>
+            <div class="publication-links">
+                <a href="https://minahuh.com/DesignChecker/">Webpage</a> • <a href="https://arxiv.org/abs/2407.17681">PDF</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="publication" data-selected="true" id="lfvqa">
+        <img src="assets/img/lfvqa_teaser.webp" alt="Long-Form Answers to Visual Question from Blind and Low Vision People" class="publication-image">
+        <div class="publication-content">
+            <div class="publication-title">Long-Form Answers to Visual Question from Blind and Low Vision People</div>
+            <div class="publication-authors"><strong>Mina Huh</strong>, Fangyuan Xu, Yi-Hao Peng, Chongyan Chen, Hansika Murugu, Danna Gurari, Eunsol Choi, Amy Pavel</div>
+            <div class="publication-venue-row">
+                <span class="publication-venue">COLM 2024</span>
+                <span class="publication-award"><i class="fas fa-award"></i> Oral Spotlight (2%)</span>
+            </div>
+            <div class="publication-links">
+                <a href="https://minahuh.com/LFVQA/">Webpage</a> • <a href="https://arxiv.org/abs/2408.06303">PDF</a> • <a href="https://www.youtube.com/watch?v=k0IL5MkAga8&list=PLmg-XDRgocBCnA9m6bZy991rQSVsmlFIU&index=5">Talk</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="publication" data-selected="false">
+        <img src="assets/img/shortscribe_teaser.webp" alt="ShortScribe: Making Short-Form Videos Accessible with Hierarchical Video Summaries" class="publication-image">
+        <div class="publication-content">
+            <div class="publication-title">ShortScribe: Making Short-Form Videos Accessible with Hierarchical Video Summaries</div>
+            <div class="publication-authors">Tess Van Daele, Akhil Iyer, Yuning Zhang, Jayln Derry, <strong>Mina Huh</strong>, Amy Pavel</div>
+            <div class="publication-venue-row"><span class="publication-venue">CHI 2024</span></div>
+            <div class="publication-links">
+                <a href="https://minahuh.com/ShortScribe/">Webpage</a> • <a href="https://arxiv.org/abs/2402.10382">PDF</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="publication" data-selected="true" id="genassist">
+        <img src="assets/img/genassist_teaser.webp" alt="GenAssist: Making Image Generation Accessible" class="publication-image">
+        <div class="publication-content">
+            <div class="publication-title">GenAssist: Making Image Generation Accessible</div>
+            <div class="publication-authors"><strong>Mina Huh</strong>, Yi-Hao Peng, Amy Pavel</div>
+            <div class="publication-venue-row">
+                <span class="publication-venue">UIST 2023</span>
+                <span class="publication-award"><i class="fas fa-trophy"></i> Best Paper Award (1%)</span>
+            </div>
+            <div class="publication-links">
+                <a href="https://minahuh.com/GenAssist/">Webpage</a> • <a href="GenAssist-Alt-Text.pdf">PDF</a> • <a href="https://www.youtube.com/watch?v=1pDjm-n_Jkk">Talk</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="publication" data-selected="false">
+        <img src="assets/img/avscript_teaser.webp" alt="AVscript: Accessible Video Editing with Audio-Visual Scripts" class="publication-image">
+        <div class="publication-content">
+            <div class="publication-title">AVscript: Accessible Video Editing with Audio-Visual Scripts</div>
+            <div class="publication-authors"><strong>Mina Huh</strong>, Saelyne Yang, Yi-Hao Peng, Xiang 'Anthony' Chen, Young-Ho Kim, Amy Pavel</div>
+            <div class="publication-venue-row"><span class="publication-venue">CHI 2023</span></div>
+            <div class="publication-links">
+                <a href="https://minahuh.com/AVscript/">Webpage</a> • <a href="AVscript-tagged.pdf">PDF</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="publication" data-selected="false">
+        <img src="assets/img/ComicsA11y-teaser.jpeg" alt="Cocomix: Utilizing Comments to Improve Non-Visual Webtoon Accessibility" class="publication-image">
+        <div class="publication-content">
+            <div class="publication-title">Cocomix: Utilizing Comments to Improve Non-Visual Webtoon Accessibility</div>
+            <div class="publication-authors"><strong>Mina Huh</strong>, Yunjung Lee, Dasom Choi, Haesoo Kim, Uran Oh, Juho Kim</div>
+            <div class="publication-venue-row"><span class="publication-venue">CHI 2022</span></div>
+            <div class="publication-links">
+                <a href="https://dl.acm.org/doi/fullHtml/10.1145/3491102.3502081">Webpage</a> • <a href="CHI2022_Cocomix.pdf">PDF</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="publication" data-selected="false">
+        <img src="assets/img/makeup_teaser.png" alt="Exploring Perceptions, Practices, and Challenges of Using Makeup and Cosmetics for People with Visual Impairments" class="publication-image">
+        <div class="publication-content">
+            <div class="publication-title">"It Feels Like Taking a Gamble": Exploring Perceptions, Practices, and Challenges of Using Makeup and Cosmetics for People with Visual Impairments</div>
+            <div class="publication-authors">Mingzhe Li*, Francheska Spektor*, Meng Xia*, <strong>Mina Huh*</strong>, Peter Cederberg, Yuqi Gong, Kristen Shinohara, Patrick Carrington</div>
+            <div class="publication-venue-row">
+                <span class="publication-venue">CHI 2022</span>
+                <span class="equal-contribution">* equal contribution</span>
+            </div>
+            <div class="publication-links">
+                <a href="CHI2022_BlindCosmetics.pdf">PDF</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="publication" data-selected="false">
+        <img src="assets/img/cscl_teaser.png" alt="A Duoethnographic Study of a Mixed-Ability Team In a Collaborative Group Programming Project" class="publication-image">
+        <div class="publication-content">
+            <div class="publication-title">A Duoethnographic Study of a Mixed-Ability Team In a Collaborative Group Programming Project</div>
+            <div class="publication-authors"><strong>Mina Huh</strong>, Jooyoung Seo</div>
+            <div class="publication-venue-row"><span class="publication-venue">CSCL 2022</span></div>
+            <div class="publication-links">
+                <a href="CSCL2022_duoethnography.pdf">PDF</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="publication" data-selected="false" id="rubyslippers">
+        <img src="assets/img/rubyslippers_teaser.jpg" alt="RubySlippers: Supporting Content-based Voice Navigation for How-to Videos" class="publication-image">
+        <div class="publication-content">
+            <div class="publication-title">RubySlippers: Supporting Content-based Voice Navigation for How-to Videos</div>
+            <div class="publication-authors">Minsuk Chang, <strong>Mina Huh</strong>, Juho Kim</div>
+            <div class="publication-venue-row"><span class="publication-venue">CHI 2021</span></div>
+            <div class="publication-links">
+                <a href="https://dl.acm.org/doi/fullHtml/10.1145/3411764.3445131">Webpage</a> • <a href="https://kixlab.github.io/website-files/2021/chi2021-RubySlippers-paper.pdf">PDF</a>
+            </div>
+        </div>
+    </div>
+    
+    <h2>Posters, Demos, and Workshops</h2>
+    
+    <div class="publication">
+        <img src="assets/img/chi_workshop_teaser.webp" alt="Generative AI and Accessibility Workshop" class="publication-image">
+        <div class="publication-content">
+            <div class="publication-title">Generative AI and Accessibility Workshop: Surfacing Opportunities and Risks</div>
+            <div class="publication-authors">Kate Glazko, <strong>Mina Huh</strong>, Jazette Johnson, Amy Pavel, Jennifer Mankoff</div>
+            <div class="publication-venue-row">
+                <span class="publication-venue">CHI 2025</span>
+                <span class="publication-award"><i class="fas fa-users"></i> Organizing</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="publication">
+        <img src="assets/img/uist_workshop_teaser.webp" alt="Accessible Cyber-Physical Activities Workshop" class="publication-image">
+        <div class="publication-content">
+            <div class="publication-title">Accessible Cyber-Physical Activities</div>
+            <div class="publication-authors">Riku Arakawa, Franklin Mingzhe Li, Nandi Zhang, <strong>Mina Huh</strong>, Amy Pavel, Ryo Suzuki, Patrick Carrington, Yukang Yan</div>
+            <div class="publication-venue-row">
+                <span class="publication-venue">UIST 2025</span>
+                <span class="publication-award"><i class="fas fa-users"></i> Organizing</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="publication">
+        <div class="publication-content">
+            <div class="publication-title">Designing Accessible Robot Communication for Blind People</div>
+            <div class="publication-authors"><strong>Mina Huh</strong>, Huihan Liu, Albert Yu, Roberto Martín-Martín, Yuke Zhu, Maya Cakmak, Amy Pavel</div>
+            <div class="publication-venue-row">
+                <span class="publication-venue">CHI 2026: The 3rd InterAI Workshop (Interactive AI for Human-Centered Robotics)</span>
+                <span class="publication-award"><i class="fas fa-trophy"></i> Best Paper Award (1st place)</span>
+            </div>
+            <div class="publication-links">
+                <a href="https://openreview.net/attachment?id=15KsV377Ll&amp;name=pdf">PDF</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="publication">
+        <div class="publication-content">
+            <div class="publication-title">Generating Video Soundtracks with Contextual Visual Thumbnails</div>
+            <div class="publication-authors"><strong>Mina Huh</strong>, Ailie C. Fraser, Dingzeyu Li, Mira Dontcheva, Bryan Wang</div>
+            <div class="publication-venue-row"><span class="publication-venue">ISMIR 2025 Late-breaking Demos</span></div>
+        </div>
+    </div>
+    
+    <div class="publication">
+        <div class="publication-content">
+            <div class="publication-title">Vid2Coach: Transforming How-To Videos into Task Assistants</div>
+            <div class="publication-authors"><strong>Mina Huh</strong>, Zihui Xue, Ujjaini Das, Kumar Ashutosh, Kristen Grauman, Amy Pavel</div>
+            <div class="publication-venue-row"><span class="publication-venue">CVPR 2025 Workshop: Vision-Based Assistants in the Real-World | EgoVis Workshop</span></div>
+        </div>
+    </div>
+    
+    <!-- <div class="publication">
+        <div class="publication-content">
+            <div class="publication-title">Vid2Coach: Transforming How-To Videos into Task Assistants</div>
+            <div class="publication-authors"><strong>Mina Huh</strong>, Zihui Xue, Ujjaini Das, Kumar Ashutosh, Kristen Grauman, Amy Pavel</div>
+            <div class="publication-venue-row"><span class="publication-venue">CVPR 2025 Workshop: Second Joint Egocentric Vision (EgoVis) Workshop</span></div>
+        </div>
+    </div> -->
+    
+    <div class="publication">
+        <div class="publication-content">
+            <div class="publication-title">Long-form Answers to Visual Questions Asked by Blind and Low Vision People</div>
+            <div class="publication-authors"><strong>Mina Huh</strong>, Fangyuan Xu, Chongyan Chen, Yi-Hao Peng, Hansika Murugu, Danna Gurari, Eunsol Choi, Amy Pavel</div>
+            <div class="publication-venue-row"><span class="publication-venue">CVPR 2025 Workshop: Demographic Diversity in Computer Vision</span></div>
+        </div>
+    </div>
+    
+    <div class="publication">
+        <div class="publication-content">
+            <div class="publication-title">GenAssist: Making Image Generation Accessible</div>
+            <div class="publication-authors"><strong>Mina Huh</strong>, Yi-Hao Peng, Amy Pavel</div>
+            <div class="publication-venue-row"><span class="publication-venue">UIST 2023 Demonstration</span></div>
+        </div>
+    </div>
+    
+    <div class="publication">
+        <div class="publication-content">
+            <div class="publication-title">Reimagining Accessibility and Inclusion in K-12 CS Education Through Curriculum and Professional Development</div>
+            <div class="publication-authors">Maya Israel, Supriya Dey, Yota Dimitriadi, Heather Feldner, Amy lsvik, Noel Kuriakos, Jean Salac, <strong>Mina Huh</strong>, and Gesu India</div>
+            <div class="publication-venue-row"><span class="publication-venue">Microsoft Research Accessible Computer Science Education Fall Workshop, 2020</span></div>
+        </div>
+    </div>
+    
+    <h2>Awards and Honors</h2>
+    <div style="margin-bottom: 20px;">
+        <div style="margin-bottom: 12px;">
+            <strong>UIST Best Paper Award (1%)</strong>, 2023<br>
+            <span style="color: #666; font-size: 0.9em;">GenAssist: Making Image Generation Accessible</span>
+        </div>
+        <div style="margin-bottom: 12px;">
+            <strong>COLM Oral Spotlight (2%)</strong>, 2024<br>
+            <span style="color: #666; font-size: 0.9em;">Long-Form Answers to Visual Questions Asked by Blind and Low Vision People</span>
+        </div>
+        <div style="margin-bottom: 12px;">
+            <strong>CHI InterAI Workshop Best Paper Award</strong>, 2026<br>
+            <span style="color: #666; font-size: 0.9em;">Designing Accessible Robot Communication for Blind People</span>
+        </div>
+        <div style="margin-bottom: 12px;">
+            <strong>Google Ph.D. Fellowship</strong>, 2024-2026<br>
+            <span style="color: #666; font-size: 0.9em;">Full tuition and stipend ($70,000)</span>
+        </div>
+        <div style="margin-bottom: 12px;">
+            <strong>UT Graduate Dean's Prestigious Fellowship</strong>, 2024-2026<br>
+            <span style="color: #666; font-size: 0.9em;">Stipend and tuition assistance</span>
+        </div>
+        <div style="margin-bottom: 12px;">
+            <strong>Special Recognition for Outstanding Reviews (14)</strong><br>
+            <span style="color: #666; font-size: 0.9em;">CHI 2023, CHI 2024 (2), UIST 2024, CHI 2025, DIS 2025, UIST 2025 (2), CHI 2026 (5), DIS 2026</span>
+        </div>
+    </div>
+    
+    <script>
+        // Filter functionality
+        const filterAll = document.getElementById('filter-all');
+        const filterSelected = document.getElementById('filter-selected');
+        // Only select publications with data-selected attribute (research publications)
+        const publications = document.querySelectorAll('.publication[data-selected]');
+        
+        // Initialize: show only selected by default
+        function showSelected() {
+            publications.forEach(pub => {
+                const isSelected = pub.getAttribute('data-selected') === 'true';
+                if (isSelected) {
+                    pub.classList.remove('hidden');
+                } else {
+                    pub.classList.add('hidden');
+                }
+            });
+        }
+        
+        function showAll() {
+            publications.forEach(pub => {
+                pub.classList.remove('hidden');
+            });
+        }
+        
+        filterAll.addEventListener('click', (e) => {
+            e.preventDefault();
+            filterAll.classList.add('active');
+            filterSelected.classList.remove('active');
+            showAll();
+        });
+        
+        filterSelected.addEventListener('click', (e) => {
+            e.preventDefault();
+            filterSelected.classList.add('active');
+            filterAll.classList.remove('active');
+            showSelected();
+        });
+        
+        // Initialize with all view
+        showAll();
+    </script>
+</body>
+</html>
+
