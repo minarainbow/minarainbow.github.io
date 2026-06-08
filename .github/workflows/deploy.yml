@@ -1,14 +1,9 @@
-name: deploy
+# Static site: GitHub Pages serves index.html from master (see .nojekyll).
+# Jekyll deploy is disabled. To redeploy via al-folio, run this workflow manually.
+name: deploy-jekyll (manual only)
 
 on:
-  push:
-    branches:
-      - master
-      - main
-  pull_request:
-    branches:
-      - master
-      - main
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -29,7 +24,6 @@ jobs:
     - name: Install deps
       run: |
         npm install -g mermaid.cli
-    # jekyll-imagemagick shells out to `convert` (see _config.yml imagemagick.enabled)
     - name: Install ImageMagick
       run: |
         sudo apt-get update
@@ -40,14 +34,7 @@ jobs:
       run: |
         git config --global user.name "GitHub Action"
         git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        if [[ ${GITHUB_REF} = refs/pull/*/merge ]]; then # pull request
-          echo "SRC_BRANCH=${GITHUB_HEAD_REF}" >> $GITHUB_OUTPUT
-          echo "NO_PUSH=--no-push" >> $GITHUB_OUTPUT
-        elif [[ ${GITHUB_REF} = refs/heads/* ]]; then # branch, e.g. master, source etc
-          echo "SRC_BRANCH=${GITHUB_REF#refs/heads/}" >> $GITHUB_OUTPUT
-        fi
+        echo "SRC_BRANCH=master" >> $GITHUB_OUTPUT
         echo "DEPLOY_BRANCH=gh-pages" >> $GITHUB_OUTPUT
-    - name: Deploy website 
-      run:  yes | bash bin/deploy --verbose ${{ steps.setup.outputs.NO_PUSH }}
-                    --src ${{ steps.setup.outputs.SRC_BRANCH }} 
-                    --deploy ${{ steps.setup.outputs.DEPLOY_BRANCH }} 
+    - name: Deploy website
+      run: yes | bash bin/deploy --verbose --src ${{ steps.setup.outputs.SRC_BRANCH }} --deploy ${{ steps.setup.outputs.DEPLOY_BRANCH }}
