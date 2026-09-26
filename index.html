@@ -112,6 +112,9 @@
         h2:not(:first-of-type) {
             margin-top: 50px;
         }
+        h2.section-spacer {
+            margin-top: 72px;
+        }
         .publication {
             margin-bottom: 30px;
             display: flex;
@@ -119,7 +122,7 @@
             align-items: flex-start;
         }
         .publication-image {
-            width: 200px;
+            width: 250px;
             height: auto;
             object-fit: contain;
             border-radius: 4px;
@@ -153,6 +156,15 @@
         }
         .publication-award i {
             font-size: 0.85em;
+        }
+        .publication-award svg {
+            width: 0.9em;
+            height: 0.9em;
+            flex-shrink: 0;
+        }
+        a.publication-award {
+            text-decoration: none;
+            color: #000;
         }
         .publication-authors strong {
             color: #000;
@@ -263,27 +275,55 @@
     </div>
     
     <div class="research-header">
-        <h2>Research</h2>
+        <h2>Research Papers</h2>
         <div class="filter-toggle">
-            <a href="#" id="filter-all" class="active">All</a>
+            <a href="#" id="filter-selected" class="active">Selected</a>
             <span>/</span>
-            <a href="#" id="filter-selected">Selected</a>
+            <a href="#" id="filter-all">All</a>
         </div>
     </div>
     
-    <div class="publication" data-selected="false" id="vidtune">
+    <div class="publication" data-selected="true" id="uist-dc">
+        <img src="assets/img/uist_dc_teaser.png" alt="Accessible Human-AI Collaboration" class="publication-image">
+        <div class="publication-content">
+            <div class="publication-title">Accessible Human-AI Collaboration</div>
+            <div class="publication-authors"><strong>Mina Huh</strong></div>
+            <div class="publication-venue-row"><span class="publication-venue">UIST 2026 Doctoral Consortium</span></div>
+            <div class="publication-links">
+                <a href="UIST2026_Doctoral_Consortium.pdf">PDF</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="publication" data-selected="true" id="robot-oversight">
+        <img src="assets/img/robot_oversight_teaser.png" alt="Designing Accessible Oversight of Household Robots with Blind and Low-Vision People" class="publication-image">
+        <div class="publication-content">
+            <div class="publication-title">Designing Accessible Oversight of Household Robots with Blind and Low-Vision People</div>
+            <div class="publication-authors"><strong>Mina Huh</strong>, Huihan Liu, Albert Yu, Ujjaini Das, Roberto Martin-Martin, Yuke Zhu, Maya Cakmak, Amy Pavel</div>
+            <div class="publication-venue-row">
+                <span class="publication-venue">Under Review</span>
+                <span class="publication-venue">CHI 2026 InterAI Workshop</span>
+                <span class="publication-award"><i class="fas fa-trophy"></i> Best Paper Award (1st)</span>
+            </div>
+            <div class="publication-links">
+                <a href="Accessible_Robot_Oversight.pdf">PDF</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="publication hidden" data-selected="false" id="vidtune">
         <img src="assets/img/vidtune_teaser.png" alt="VidTune: Creating Video Soundtracks with Generative Music and Contextual Thumbnails" class="publication-image">
         <div class="publication-content">
             <div class="publication-title">VidTune: Creating Video Soundtracks with Generative Music and Contextual Thumbnails</div>
             <div class="publication-authors"><strong>Mina Huh</strong>, C. Ailie Fraser, Dingzeyu Li, Mira Dontcheva, Bryan Wang</div>
             <div class="publication-venue-row"><span class="publication-venue">CHI 2026</span></div>
             <div class="publication-links">
-                <a href="https://www.arxiv.org/abs/2601.12180">PDF</a>
+                <a href="https://minahuh.com/VidTune/">Webpage</a> • <a href="https://www.arxiv.org/abs/2601.12180">PDF</a>
             </div>
         </div>
     </div>
     
-    <div class="publication" data-selected="false">
+    <div class="publication hidden" data-selected="false">
         <img src="assets/img/dance_teaser.png" alt="Co-Designing Multimodal Systems for Accessible Asynchronous Dance Instruction" class="publication-image">
         <div class="publication-content">
             <div class="publication-title">Co-Designing Multimodal Systems for Accessible Asynchronous Dance Instruction</div>
@@ -307,7 +347,7 @@
         </div>
     </div>
     
-    <div class="publication" data-selected="false" id="videodiff">
+    <div class="publication hidden" data-selected="false" id="videodiff">
         <img src="assets/img/videodiff_teaser.webp" alt="VideoDiff: Human-AI Video Co-Creation with Alternatives" class="publication-image">
         <div class="publication-content">
             <div class="publication-title">VideoDiff: Human-AI Video Co-Creation with Alternatives</div>
@@ -319,7 +359,7 @@
         </div>
     </div>
     
-    <div class="publication" data-selected="false">
+    <div class="publication hidden" data-selected="false">
         <img src="assets/img/lotus_teaser.webp" alt="Lotus: Creating Short Videos from Long Videos with Abstractive and Extractive Summarization" class="publication-image">
         <div class="publication-content">
             <div class="publication-title">Lotus: Creating Short Videos from Long Videos with Abstractive and Extractive Summarization</div>
@@ -331,7 +371,7 @@
         </div>
     </div>
     
-    <div class="publication" data-selected="false" id="designchecker">
+    <div class="publication hidden" data-selected="false" id="designchecker">
         <img src="assets/img/designchecker_teaser.webp" alt="DesignChecker: Visual Design Support for BLV Web Developers" class="publication-image">
         <div class="publication-content">
             <div class="publication-title">DesignChecker: Visual Design Support for BLV Web Developers</div>
@@ -358,7 +398,7 @@
         </div>
     </div>
     
-    <div class="publication" data-selected="false">
+    <div class="publication hidden" data-selected="false">
         <img src="assets/img/shortscribe_teaser.webp" alt="ShortScribe: Making Short-Form Videos Accessible with Hierarchical Video Summaries" class="publication-image">
         <div class="publication-content">
             <div class="publication-title">ShortScribe: Making Short-Form Videos Accessible with Hierarchical Video Summaries</div>
@@ -378,6 +418,7 @@
             <div class="publication-venue-row">
                 <span class="publication-venue">UIST 2023</span>
                 <span class="publication-award"><i class="fas fa-trophy"></i> Best Paper Award (1%)</span>
+                <a class="publication-award" href="https://research.adobe.com/news/firefly-alt-text-helping-blind-and-low-vision-creators/"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.966 22.624l-1.69-4.281H8.122l3.892-9.144 5.662 13.425zM8.884 1.376H0v21.248zm15.116 0h-8.884L24 22.624Z"/></svg> Inspired Adobe Firefly Feature</a>
             </div>
             <div class="publication-links">
                 <a href="https://minahuh.com/GenAssist/">Webpage</a> • <a href="GenAssist-Alt-Text.pdf">PDF</a> • <a href="https://www.youtube.com/watch?v=1pDjm-n_Jkk">Talk</a>
@@ -385,7 +426,7 @@
         </div>
     </div>
     
-    <div class="publication" data-selected="false">
+    <div class="publication hidden" data-selected="false">
         <img src="assets/img/avscript_teaser.webp" alt="AVscript: Accessible Video Editing with Audio-Visual Scripts" class="publication-image">
         <div class="publication-content">
             <div class="publication-title">AVscript: Accessible Video Editing with Audio-Visual Scripts</div>
@@ -397,7 +438,7 @@
         </div>
     </div>
     
-    <div class="publication" data-selected="false">
+    <div class="publication hidden" data-selected="false">
         <img src="assets/img/ComicsA11y-teaser.jpeg" alt="Cocomix: Utilizing Comments to Improve Non-Visual Webtoon Accessibility" class="publication-image">
         <div class="publication-content">
             <div class="publication-title">Cocomix: Utilizing Comments to Improve Non-Visual Webtoon Accessibility</div>
@@ -409,7 +450,7 @@
         </div>
     </div>
     
-    <div class="publication" data-selected="false">
+    <div class="publication hidden" data-selected="false">
         <img src="assets/img/makeup_teaser.png" alt="Exploring Perceptions, Practices, and Challenges of Using Makeup and Cosmetics for People with Visual Impairments" class="publication-image">
         <div class="publication-content">
             <div class="publication-title">"It Feels Like Taking a Gamble": Exploring Perceptions, Practices, and Challenges of Using Makeup and Cosmetics for People with Visual Impairments</div>
@@ -424,7 +465,7 @@
         </div>
     </div>
     
-    <div class="publication" data-selected="false">
+    <div class="publication hidden" data-selected="false">
         <img src="assets/img/cscl_teaser.png" alt="A Duoethnographic Study of a Mixed-Ability Team In a Collaborative Group Programming Project" class="publication-image">
         <div class="publication-content">
             <div class="publication-title">A Duoethnographic Study of a Mixed-Ability Team In a Collaborative Group Programming Project</div>
@@ -436,7 +477,7 @@
         </div>
     </div>
     
-    <div class="publication" data-selected="false" id="rubyslippers">
+    <div class="publication hidden" data-selected="false" id="rubyslippers">
         <img src="assets/img/rubyslippers_teaser.jpg" alt="RubySlippers: Supporting Content-based Voice Navigation for How-to Videos" class="publication-image">
         <div class="publication-content">
             <div class="publication-title">RubySlippers: Supporting Content-based Voice Navigation for How-to Videos</div>
@@ -448,7 +489,22 @@
         </div>
     </div>
     
-    <h2>Posters, Demos, and Workshops</h2>
+    <h2 class="section-spacer">Organized Workshops</h2>
+    
+    <div class="publication">
+        <img src="assets/img/cps4all_teaser.png" alt="Cyber-Physical Systems for Accessibility and Ability Augmentation" class="publication-image">
+        <div class="publication-content">
+            <div class="publication-title">Cyber-Physical Systems for Accessibility and Ability Augmentation</div>
+            <div class="publication-authors">Shuchang Xu, Riku Arakawa, <strong>Mina Huh</strong>, Nandi Zhang, Tianyu Zhang, Wazeer Zulfikar, Ruei-Che Chang, Yotam Sechayk, Huamin Qu, Amy Pavel, Franklin Mingzhe Li, Yukang Yan, Brian A. Smith, Pattie Maes</div>
+            <div class="publication-venue-row">
+                <span class="publication-venue">UIST 2026</span>
+                <span class="publication-award"><i class="fas fa-users"></i> Organizing</span>
+            </div>
+            <div class="publication-links">
+                <a href="https://cps4all.github.io/">Webpage</a>
+            </div>
+        </div>
+    </div>
     
     <div class="publication">
         <img src="assets/img/chi_workshop_teaser.webp" alt="Generative AI and Accessibility Workshop" class="publication-image">
@@ -458,6 +514,9 @@
             <div class="publication-venue-row">
                 <span class="publication-venue">CHI 2025</span>
                 <span class="publication-award"><i class="fas fa-users"></i> Organizing</span>
+            </div>
+            <div class="publication-links">
+                <a href="https://accessgaichi.com/">Webpage</a>
             </div>
         </div>
     </div>
@@ -471,6 +530,30 @@
                 <span class="publication-venue">UIST 2025</span>
                 <span class="publication-award"><i class="fas fa-users"></i> Organizing</span>
             </div>
+            <div class="publication-links">
+                <a href="https://accessible-cps.github.io/">Webpage</a>
+            </div>
+        </div>
+    </div>
+    
+    <h2>Posters, Demos, and Workshop Papers</h2>
+    
+    <div class="publication">
+        <div class="publication-content">
+            <div class="publication-title">LegibilityBench: A Human-Centered Benchmark for Behavior Legibility in Computer-Use Agents</div>
+            <div class="publication-authors"><strong>Mina Huh</strong>, Diyi Yang, Amy Pavel</div>
+            <div class="publication-venue-row">
+                <span class="publication-venue">COLM 2026 Workshop on Agent Behavior</span>
+                <span class="publication-award"><i class="fas fa-award"></i> Benchmark Proposal (Top 7%)</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="publication">
+        <div class="publication-content">
+            <div class="publication-title">Legible Agents: A Design Space for Overseeing Computer Use Agents</div>
+            <div class="publication-authors"><strong>Mina Huh</strong>, Sukmin Hwang, Amy Pavel</div>
+            <div class="publication-venue-row"><span class="publication-venue">COLM 2026 Workshop on Agent Behavior</span></div>
         </div>
     </div>
     
@@ -525,24 +608,69 @@
     <h2>Awards and Honors</h2>
     <div style="margin-bottom: 20px;">
         <div style="margin-bottom: 12px;">
-            <strong>UIST Best Paper Award (1%)</strong>, 2023<br>
-            <span style="color: #666; font-size: 0.9em;">GenAssist: Making Image Generation Accessible</span>
+            <strong>Google Ph.D. Fellowship</strong>, 2024-2026<br>
+            <span style="color: #666; font-size: 0.9em;">Full tuition and stipend ($170,000)</span>
+        </div>
+        <div style="margin-bottom: 12px;">
+            <strong>Berkeley H2H8 Graduate Research Fellowship</strong><br>
+            <span style="color: #666; font-size: 0.9em;">Yearly grant for research to advance humanity ($10,000)</span>
+        </div>
+        <div style="margin-bottom: 12px;">
+            <strong>COLM Workshop on Agent Behavior Benchmark Grant (7%)</strong>, 2026<br>
+            <span style="color: #666; font-size: 0.9em;">Credits from Google, OpenAI, and Anthropic ($6,000)</span>
+        </div>
+        <div style="margin-bottom: 12px;">
+            <strong>CHI InterAI Workshop Best Paper (1st place)</strong>, 2026<br>
+            <span style="color: #666; font-size: 0.9em;">Designing Accessible Robot Communication for Blind People</span>
         </div>
         <div style="margin-bottom: 12px;">
             <strong>COLM Oral Spotlight (2%)</strong>, 2024<br>
             <span style="color: #666; font-size: 0.9em;">Long-Form Answers to Visual Questions Asked by Blind and Low Vision People</span>
         </div>
         <div style="margin-bottom: 12px;">
-            <strong>Google Ph.D. Fellowship</strong>, 2024-2026<br>
-            <span style="color: #666; font-size: 0.9em;">Full tuition and stipend ($70,000)</span>
+            <strong>UIST Best Paper Award (1%)</strong>, 2023<br>
+            <span style="color: #666; font-size: 0.9em;">GenAssist: Making Image Generation Accessible</span>
         </div>
         <div style="margin-bottom: 12px;">
             <strong>UT Graduate Dean's Prestigious Fellowship</strong>, 2024-2026<br>
             <span style="color: #666; font-size: 0.9em;">Stipend and tuition assistance</span>
         </div>
         <div style="margin-bottom: 12px;">
-            <strong>Special Recognition for Outstanding Reviews</strong><br>
-            <span style="color: #666; font-size: 0.9em;">CHI 2023, CHI 2024, CHI 2024 LBW, UIST 2024, CHI 2025, DIS 2025, UIST 2025 (2), CHI 2026 (4)</span>
+            <strong>Special Recognition for Outstanding Reviews (18)</strong><br>
+            <span style="color: #666; font-size: 0.9em;">CHI 2023, CHI 2024, CHI 2024 LBW, UIST 2024, CHI 2025, DIS 2025, UIST 2025 (2), CHI 2026 (5), DIS 2026, UIST 2026 (4)</span>
+        </div>
+    </div>
+    
+    <h2>Teaching</h2>
+    <div style="margin-bottom: 20px;">
+        <div style="margin-bottom: 16px;">
+            <strong>Instructor</strong> — UC Berkeley<br>
+            <span style="color: #666; font-size: 0.9em;">CS 160: User Interface Design and Development</span><br>
+            <span style="color: #666; font-size: 0.9em;">Summer 2026</span><br>
+            <span style="color: #666; font-size: 0.9em;">60 students</span>
+            <div class="publication-links">
+                <a href="https://cs160-summer-2026.github.io/website/">Webpage</a>
+            </div>
+        </div>
+        <div style="margin-bottom: 16px;">
+            <strong>Teaching Assistant</strong> — UT Austin<br>
+            <span style="color: #666; font-size: 0.9em;">CS 378: Intro to Human-Computer Interaction</span><br>
+            <span style="color: #666; font-size: 0.9em;">55 students</span>
+        </div>
+        <div style="margin-bottom: 16px;">
+            <strong>Guest Lecturer</strong> — UC Berkeley<br>
+            <span style="color: #666; font-size: 0.9em;">CS 10: The Beauty and Joy of Computing, Oct. 2026</span><br>
+            <span style="color: #666; font-size: 0.9em; font-style: italic;">Introduction to HCI</span>
+        </div>
+        <div style="margin-bottom: 16px;">
+            <strong>Guest Lecturer</strong> — UC Berkeley<br>
+            <span style="color: #666; font-size: 0.9em;">Tech Together, Jul. 2026</span><br>
+            <span style="color: #666; font-size: 0.9em; font-style: italic;">Designing AI systems for Social Good</span>
+        </div>
+        <div style="margin-bottom: 16px;">
+            <strong>Guest Lecturer</strong> — Texas A&M<br>
+            <span style="color: #666; font-size: 0.9em;">CS 689: Special Topics in Human-AI Interaction, Nov. 2025</span><br>
+            <span style="color: #666; font-size: 0.9em; font-style: italic;">Augmenting Human Creativity with Accessible Multimodal AI Systems</span>
         </div>
     </div>
     
@@ -585,8 +713,8 @@
             showSelected();
         });
         
-        // Initialize with all view
-        showAll();
+        // Initialize with selected view
+        showSelected();
     </script>
 </body>
 </html>
